@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEED Documentation - Bicycle Network</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #000;
+            background-color: #ffffff;
+            line-height: 1.4;
+        }
+        
+        /* Definiranje razina uvlačenja */
+        .level-0 { padding-left: 0; }           /* Glavni naslovi sekcija */
+        .level-1 { padding-left: 1.8rem; }      /* Podnaslovi i opisi */
+        .level-2 { padding-left: 3.5rem; }      /* Kontrole (radio, checkbox) i specifični opisi */
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 0.8rem;
+            margin-top: 2rem;
+        }
+        .sub-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: block;
+            font-size: 1rem;
+        }
+        .instruction-text {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        .yellow-btn {
+            background-color: #fde047;
+            color: #000;
+            padding: 6px 14px;
+            font-weight: 500;
+            display: inline-block;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        .yellow-btn:hover {
+            background-color: #facc15;
+        }
+        .radio-container, .checkbox-container {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            cursor: pointer;
+        }
+        .radio-container input, .checkbox-container input {
+            margin-top: 4px;
+            margin-right: 12px;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+        /* Checkbox stil */
+        .checkbox-container input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            border: 1px solid #d1d5db;
+            border-radius: 0;
+            width: 18px;
+            height: 18px;
+            position: relative;
+        }
+        .checkbox-container input[type="checkbox"]:checked::after {
+            content: '✔';
+            position: absolute;
+            top: -2px;
+            left: 2px;
+            font-size: 14px;
+        }
+        .case-box {
+            border: 1px solid #e5e7eb;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body class="p-6 md:p-12 max-w-5xl mx-auto">
+
+    <!-- Glavni naslov: Level 0 -->
+    <h2 class="section-title level-0">Bicycle Network</h2>
+    
+    <!-- Podnaslov: Level 1 -->
+    <div class="level-1">
+        <span class="sub-title">Select one of the following.</span>
+        <p class="instruction-text">
+            The project has a functional entry and/or bicycle storage within 200 yd (180 m) of a bicycle network that connects to the following:
+        </p>
+    </div>
+
+    <!-- Opcije: Level 2 -->
+    <div class="level-2">
+        <form>
+            <label class="radio-container">
+                <input type="radio" name="network_option">
+                <span>At least 10 diverse uses</span>
+            </label>
+            
+            <label class="radio-container">
+                <input type="radio" name="network_option">
+                <span>A school or employment center, if the project total floor area is 50% or more residential</span>
+            </label>
+            
+            <label class="radio-container">
+                <input type="radio" name="network_option">
+                <span>A bus rapid transit stop, passenger, rail station, or ferry terminal</span>
+            </label>
+        </form>
+    </div>
+
+    <!-- Dodatni tekst i gumb: Level 1 -->
+    <div class="level-1">
+        <p class="instruction-text">
+            Upload a vicinity map that shows routes along a bicycle network to the destination(s) selected. The map must identify use type, bicycling distance to the destination(s) from the project boundary (must be within 3 mi [4,800 m]), and each segment of the bicycling network identified by type according to the bicycle network definition.
+        </p>
+        <a href="https://www.dropbox.com/scl/fo/h4qdzj84b5m929zunyho3/AM6Z1BZbnZZdotSfAxVFwik?rlkey=3am82lmrpt342z54e5rgrwefe&st=o2altin5&dl=0" target="_blank" class="yellow-btn">Add file</a>
+    </div>
+
+    <!-- Podnaslov: Level 1 -->
+    <div class="mt-8">
+        <h2 class="sub-title level-1">For projects located in historic urban locations</h2>
+        <div class="level-2">
+            <label class="checkbox-container">
+                <input type="checkbox">
+                <span>Project is located in a historic urban location</span>
+            </label>
+        </div>
+    </div>
+
+    <!-- Podnaslov: Level 1 -->
+    <div class="mt-8">
+        <h2 class="sub-title level-1">For projects with planned bicycle networks</h2>
+        <div class="level-2">
+            <p class="instruction-text">
+                Upload a capital improvement plan or equivalent document signed on developer letterhead that confirms that the bicycle network will be fully funded by the date of the certificate of occupancy and is scheduled for completion within three years of that date.
+            </p>
+            <a href="https://www.dropbox.com/scl/fo/h4qdzj84b5m929zunyho3/AM6Z1BZbnZZdotSfAxVFwik?rlkey=3am82lmrpt342z54e5rgrwefe&st=o2altin5&dl=0" target="_blank" class="yellow-btn">Add file</a>
+        </div>
+    </div>
+
+    <!-- Glavni naslov: Level 0 -->
+    <h2 class="section-title level-0">Bicycle Storage and Shower Rooms</h2>
+    
+    <!-- Opis: Level 1 -->
+    <div class="level-1">
+        <p class="instruction-text">
+            Upload a site map that includes main and functional building entrances, short-term bicycle storage and long-term bicycle storage, walking distance from short-term storage to the main entrance and from long-term storage to a functional entrance. Label bicycle storage according to type and capacity.
+        </p>
+        <a href="https://www.dropbox.com/scl/fo/h4qdzj84b5m929zunyho3/AM6Z1BZbnZZdotSfAxVFwik?rlkey=3am82lmrpt342z54e5rgrwefe&st=o2altin5&dl=0" target="_blank" class="yellow-btn">Add file</a>
+    </div>
+
+    <!-- Podnaslov: Level 1 -->
+    <div class="mt-8">
+        <h3 class="sub-title level-1">Select one of the following:</h3>
+        
+        <!-- Sadržaj kutije: Level 2 -->
+        <div class="level-2 mt-4">
+            <div class="case-box">
+                <form>
+                    <label class="radio-container">
+                        <input type="radio" name="case_selection">
+                        <span class="font-bold">Case 1. Commercial or institutional projects</span>
+                    </label>
+                    
+                    <label class="radio-container">
+                        <input type="radio" name="case_selection">
+                        <span class="font-bold">Case 2. Residential projects</span>
+                    </label>
+                    
+                    <label class="radio-container">
+                        <input type="radio" name="case_selection">
+                        <span class="font-bold">Case 3. Mixed-use projects (both commercial and residential)</span>
+                    </label>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
