@@ -3,42 +3,456 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moja Web Stranica</title>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background-color: #f4f4f4; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1 { color: #333; border-bottom: 2px solid #333; padding-bottom: 10px; }
-        h2 { color: #2c3e50; margin-top: 25px; }
-        ul { list-style-type: none; padding: 0; }
-        li { background: #eee; margin: 5px 0; padding: 10px; border-radius: 4px; }
-    </style>
+    <title>Surrounding Density and Diverse Uses</title>
+    <!-- Učitavanje Tailwind CSS-a za moderno i jednostavno stiliziranje -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <h1>Popis kategorija i usluga</h1>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center py-12 px-4 font-sans">
+
+    <!-- Glavni kontejner -->
+    <div class="bg-white w-full max-w-3xl shadow-lg rounded-lg p-8">
         
-        <h2>Food Retail</h2>
-        <ul>
-            <li>Supermarket</li>
-            <li>Grocery with produce section</li>
-            <li>Convenience store</li>
-            <li>Farmers market</li>
-        </ul>
+        <!-- Glavni naslov stranice -->
+        <h1 class="text-3xl font-bold text-gray-800 mb-8 pb-4 border-b border-gray-200">
+            Surrounding Density and Diverse Uses
+        </h1>
 
-        <h2>Services</h2>
-        <ul>
-            <li>Bank</li>
-            <li>Gym, health club, exercise studio</li>
-            <li>Hair care</li>
-            <li>Laundry, dry cleaner</li>
-        </ul>
+        <!-- Odjeljak za odabir (prema screenshotu) -->
+        <div class="mb-6">
+            <h2 class="text-xl font-bold text-black mb-4">
+                Select one or more of the following:
+            </h2>
 
-        <h2>Civic and Community Facilities</h2>
-        <ul>
-            <li>Public library</li>
-            <li>Public park</li>
-            <li>Post office</li>
-        </ul>
+            <!-- Okvir oko checkboxova, slično kao na slici -->
+            <div class="border-t border-l border-gray-200 p-6 pt-5">
+                
+                <!-- Prva opcija -->
+                <label class="flex items-center space-x-4 mb-2 cursor-pointer">
+                    <input type="checkbox" id="option1" onchange="toggleOption1()" class="w-6 h-6 border-gray-300 rounded text-blue-600 focus:ring-blue-500 cursor-pointer">
+                    <span class="text-gray-800 font-bold text-lg">Option 1. Surrounding density (2-4 points)</span>
+                </label>
+
+                <!-- Prikriveni sadržaj za Opciju 1 -->
+                <div id="option1-content" class="hidden pl-10 mb-5">
+                    <p class="text-gray-800 text-[15px] mb-3 leading-relaxed">
+                        Upload a scaled area plan or map showing the project site, the surrounding area, and a 1/4-mi (400-m) radius from the project boundary. Label the buildings that are included in the density calculations.
+                    </p>
+                    <a href="https://www.dropbox.com/scl/fo/1zot08b3vq5j4klbm4t74/ACCW7duarFj6vOVyEnOD-GA?rlkey=t6aux1rb4z7zg2bu2pa8oq11a&st=xurijisi&dl=0" target="_blank" class="inline-block bg-[#fce029] text-black text-sm px-4 py-2 hover:bg-yellow-400 transition-colors">
+                        Add file
+                    </a>
+
+                    <!-- Radio gumbi dodani ispod "Add file" gumba -->
+                    <div class="mt-8">
+                        <h3 class="text-[17px] font-bold text-black mb-3">
+                            Select one of the following:
+                        </h3>
+                        <div class="bg-[#f9f9f9] border border-gray-200 p-5">
+                            
+                            <label class="flex items-center space-x-3 mb-4 cursor-pointer">
+                                <input type="radio" id="radio-separate" name="density_option" onchange="toggleDensityTable()" class="w-4 h-4 border-gray-400 text-black focus:ring-black cursor-pointer" checked>
+                                <span class="text-gray-800 font-bold text-[14px]">The project will document surrounding density with separate residential and nonresidential densities.</span>
+                            </label>
+                            
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" id="radio-combined" name="density_option" onchange="toggleDensityTable()" class="w-4 h-4 border-gray-400 text-black focus:ring-black cursor-pointer">
+                                <span class="text-gray-800 font-bold text-[14px]">The project will document surrounding density with combined residential and nonresidential densities.</span>
+                            </label>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Prikaz tablice za "Separate Residential..." -->
+                    <div id="separate-density-content" class="mt-8 hidden">
+                        <h3 class="text-lg font-bold text-black mb-2">Separate Residential and Nonresidential Densities</h3>
+                        <h4 class="text-md font-bold text-black mb-4">Mixed-Use Density</h4>
+                        
+                        <p class="text-[15px] text-gray-800 mb-4 leading-relaxed">
+                            <strong>Table: Mixed-use density</strong><br>
+                            Complete the table below for all mixed-use buildings (i.e. those with residential and nonresidential components) within 1/4 mi (400 m) of the project boundary. Exclude the project site area and building(s).
+                        </p>
+
+                        <div class="overflow-x-auto border border-gray-200">
+                            <table class="w-full text-left border-collapse bg-white text-[14px]">
+                                <tbody>
+                                    <tr class="border-b border-gray-200">
+                                        <td rowspan="2" class="bg-[#f9f9f9] border-r border-gray-200 p-3 font-bold text-gray-800 w-[35%] align-middle">
+                                            Mixed-use building area<br>(sq m)
+                                        </td>
+                                        <td class="bg-[#f9f9f9] border-r border-gray-200 p-3 font-bold text-gray-800 w-[35%]">
+                                            Residential uses
+                                        </td>
+                                        <td class="p-0 bg-white w-[30%]">
+                                            <input type="number" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="bg-[#f9f9f9] border-r border-gray-200 p-3 font-bold text-gray-800">
+                                            Nonresidential uses
+                                        </td>
+                                        <td class="p-0 bg-white">
+                                            <input type="number" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td colspan="2" class="bg-[#f9f9f9] border-r border-gray-200 p-3 font-bold text-gray-800">
+                                            Total mixed-use building area (sq m)
+                                        </td>
+                                        <td class="bg-[#f9f9f9] p-3 font-bold text-right text-gray-800">
+                                            To be calculated
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td colspan="2" class="bg-[#f9f9f9] border-r border-gray-200 p-3 font-bold text-gray-800">
+                                            Total mixed-use building land area (hectares)
+                                        </td>
+                                        <td class="p-0 bg-white">
+                                            <input type="number" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="bg-[#f9f9f9] border-r border-gray-200 p-3 font-bold text-gray-800">
+                                            Residential dwelling units in mixed-use buildings
+                                        </td>
+                                        <td class="p-0 bg-white">
+                                            <input type="number" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-[13px] text-gray-600 mt-3 mb-6">
+                            Note: If there are no mixed-use buildings within 1/4 mile (400 m), enter "0" for all fields.
+                        </p>
+
+                        <!-- Residential Density -->
+                        <div class="mt-8 mb-6">
+                            <h4 class="text-[16px] font-bold text-black mb-4">Residential Density</h4>
+                            
+                            <div class="pl-6 space-y-4 mb-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-800 text-[14px] w-2/3 pr-4">Number of dwelling units in residential-only buildings</span>
+                                    <div class="w-1/3">
+                                        <input type="number" class="w-full border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-800 text-[14px] w-2/3 pr-4">Land area of residential-only buildings (hectares)</span>
+                                    <div class="w-1/3">
+                                        <input type="number" class="w-full border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p class="pl-6 text-[14px] text-gray-800">
+                                Note: Include all residential buildings and land within 1/4 mi (400 m) of the project boundary. Exclude the project site area and building(s).
+                            </p>
+                        </div>
+
+                        <!-- Nonresidential Density -->
+                        <div class="mt-8 mb-4">
+                            <h4 class="text-[16px] font-bold text-black mb-4">Nonresidential Density</h4>
+                            
+                            <div class="pl-6 space-y-4 mb-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-800 text-[14px] w-2/3 pr-4">Nonresidential-only building area (sq m)</span>
+                                    <div class="w-1/3">
+                                        <input type="number" class="w-full border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-800 text-[14px] w-2/3 pr-4">Nonresidential-only land area (hectares)</span>
+                                    <div class="w-1/3">
+                                        <input type="number" class="w-full border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p class="pl-6 text-[14px] text-gray-800">
+                                Note: Include all nonresidential buildings and land within 1/4 mi (400 m) of the project boundary. Exclude the project site area and building(s).
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Prikaz tablice za "Combined Residential..." -->
+                    <div id="combined-density-content" class="mt-8 hidden">
+                        <h3 class="text-lg font-bold text-black mb-4">Combined Residential and Nonresidential Densities</h3>
+                        
+                        <p class="text-[15px] text-gray-800 mb-4 leading-relaxed">
+                            <strong>Table: Average density within 1/4 mi (400 m)</strong><br>
+                            Complete the table below. Include all buildings and buildable land within 1/4 mi (400 m) of the project boundary. Exclude the project site area and building(s).
+                        </p>
+
+                        <div class="overflow-x-auto border border-gray-200 mb-6">
+                            <table class="w-full text-left border-collapse bg-white text-[14px]">
+                                <tbody>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="bg-[#f9f9f9] border-r border-gray-200 p-4 font-bold text-gray-800 w-[60%]">
+                                            Total building area (sq m)
+                                        </td>
+                                        <td class="p-0 bg-white w-[40%]">
+                                            <input type="number" class="w-full p-4 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="bg-[#f9f9f9] border-r border-gray-200 p-4 font-bold text-gray-800">
+                                            Total buildable land (hectares)
+                                        </td>
+                                        <td class="p-0 bg-white">
+                                            <input type="number" class="w-full p-4 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bg-[#f9f9f9] border-r border-gray-200 p-4 font-bold text-gray-800">
+                                            Sq m per hectare of buildable land
+                                        </td>
+                                        <td class="p-0 bg-white">
+                                            <input type="number" class="w-full p-4 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Druga opcija -->
+                <label class="flex items-center space-x-4 cursor-pointer mb-2">
+                    <input type="checkbox" id="option2" onchange="toggleOption2()" class="w-6 h-6 border-gray-300 rounded text-blue-600 focus:ring-blue-500 cursor-pointer">
+                    <span class="text-gray-800 font-bold text-lg">Option 2. Diverse uses (1-2 points)</span>
+                </label>
+
+                <!-- Prikriveni sadržaj za Opciju 2 -->
+                <div id="option2-content" class="hidden pl-10 mb-5 mt-6">
+                    <h3 class="text-[17px] font-bold text-black mb-4">Option 2. Diverse Uses</h3>
+                    
+                    <p class="text-[15px] text-gray-800 mb-3 leading-relaxed">
+                        <strong>Table: Diverse uses</strong>
+                    </p>
+
+                    <div class="overflow-x-auto border border-gray-200 mb-6">
+                        <table class="w-full text-center border-collapse bg-white text-[14px]">
+                            <thead>
+                                <tr class="border-b border-gray-200 bg-[#f9f9f9]">
+                                    <th class="p-3 font-bold text-black border-r border-gray-200 w-[15%] leading-tight">Use Label on<br>Map</th>
+                                    <th class="p-3 font-bold text-black border-r border-gray-200 w-[20%]">Name of Use</th>
+                                    <th class="p-3 font-bold text-black border-r border-gray-200 w-[20%]">Use Category</th>
+                                    <th class="p-3 font-bold text-black border-r border-gray-200 w-[20%]">Use Type ¹</th>
+                                    <th class="p-3 font-bold text-black border-r border-gray-200 w-[15%] leading-tight">Walking<br>Distance<br>(m)</th>
+                                    <th class="p-3 font-bold text-black w-[10%]"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="diverse-uses-tbody">
+                                <tr class="border-b border-gray-200">
+                                    <td class="p-0 border-r border-gray-200"><input type="text" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
+                                    <td class="p-0 border-r border-gray-200"><input type="text" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
+                                    <td class="p-0 border-r border-gray-200">
+                                        <!-- Dodan 'appearance: auto;' kako bi strelica dropdowna bila vidljiva -->
+                                        <select onchange="updateUseTypes(this)" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-[13px] cursor-pointer" style="appearance: auto;">
+                                            <option value="" disabled selected>Select category</option>
+                                            <option value="Food retail">Food retail</option>
+                                            <option value="Community-serving retail">Community-serving retail</option>
+                                            <option value="Services">Services</option>
+                                            <option value="Civic and community facilities">Civic and community facilities</option>
+                                            <option value="Community anchor uses (BD+C and ID+C only)">Community anchor uses (BD+C and ID+C only)</option>
+                                        </select>
+                                    </td>
+                                    <td class="p-0 border-r border-gray-200">
+                                        <!-- Dodan 'appearance: auto;' kako bi strelica dropdowna bila vidljiva -->
+                                        <select class="use-type-select w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-[13px] cursor-pointer" disabled style="appearance: auto;">
+                                            <option value="" disabled selected>Select category first</option>
+                                        </select>
+                                    </td>
+                                    <td class="p-0 border-r border-gray-200"><input type="number" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
+                                    <td class="p-3 flex justify-center space-x-3 text-[#008c95] font-bold text-xl align-middle">
+                                        <button type="button" onclick="addDiverseUseRow()" class="hover:text-teal-800 focus:outline-none select-none">+</button>
+                                        <button type="button" onclick="removeDiverseUseRow(this)" class="hover:text-teal-800 focus:outline-none select-none">-</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="text-[14px] text-gray-800 mb-10 leading-relaxed">
+                        Notes:<br>
+                        ¹ No more than two uses in each use type may be counted toward compliance.
+                    </div>
+
+                    <p class="text-gray-800 text-[15px] mb-3 leading-relaxed">
+                        Upload area plan or map showing the project site and use locations. Label each use.
+                    </p>
+                    <a href="https://www.dropbox.com/scl/fo/1zot08b3vq5j4klbm4t74/ACCW7duarFj6vOVyEnOD-GA?rlkey=t6aux1rb4z7zg2bu2pa8oq11a&st=m5ulg9ts&dl=0" target="_blank" class="inline-block bg-[#fce029] text-black text-sm px-4 py-2 hover:bg-yellow-400 transition-colors">
+                        Add file
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Ovdje se kasnije mogu dodati dodatni detalji i funkcionalnosti -->
+        <div id="dodatni-detalji" class="mt-8 text-gray-500 text-sm italic">
+            <!-- Prostor rezerviran za vaše naknadne detalje -->
+        </div>
+
     </div>
+
+    <!-- JavaScript za prikazivanje i skrivanje sadržaja -->
+    <script>
+        function toggleOption1() {
+            const checkbox = document.getElementById('option1');
+            const content = document.getElementById('option1-content');
+            if (checkbox.checked) {
+                content.classList.remove('hidden');
+                toggleDensityTable();
+            } else {
+                content.classList.add('hidden');
+            }
+        }
+
+        function toggleOption2() {
+            const checkbox = document.getElementById('option2');
+            const content = document.getElementById('option2-content');
+            if (checkbox.checked) {
+                content.classList.remove('hidden');
+            } else {
+                content.classList.add('hidden');
+            }
+        }
+
+        // Podaci preuzeti sa slike tablice ovisnosti
+        const useTypeData = {
+            "Food retail": [
+                "Supermarket",
+                "Grocery with produce section"
+            ],
+            "Community-serving retail": [
+                "Convenience store",
+                "Farmers market",
+                "Hardware store",
+                "Pharmacy",
+                "Other retail"
+            ],
+            "Services": [
+                "Bank",
+                "Family entertainment venue (e.g., theater, sports)",
+                "Gym, health club, exercise studio",
+                "Hair care",
+                "Laundry, dry cleaner",
+                "Restaurant, café, diner (excluding those with only drive-thru service)"
+            ],
+            "Civic and community facilities": [
+                "Adult or senior care (licensed)",
+                "Child care (licensed)",
+                "Community or recreation center",
+                "Cultural arts facility (museum, performing arts)",
+                "Education facility (e.g., K—12 school, university, adult education center, vocational school, community college)",
+                "Government office that serves public on-site",
+                "Medical clinic or office that treats patients",
+                "Place of worship",
+                "Police or fire station",
+                "Post office",
+                "Public library",
+                "Public park",
+                "Social services center"
+            ],
+            "Community anchor uses (BD+C and ID+C only)": [
+                "Commercial office (100 or more full-time equivalent jobs)",
+                "Housing (100 or more dwelling units)"
+            ]
+        };
+
+        // Funkcija koja ažurira izbornik "Use Type"
+        function updateUseTypes(categorySelect) {
+            const category = categorySelect.value;
+            const row = categorySelect.closest('tr');
+            const typeSelect = row.querySelector('.use-type-select');
+
+            // Očisti trenutne opcije
+            typeSelect.innerHTML = '<option value="" disabled selected>Select use type</option>';
+
+            if (category && useTypeData[category]) {
+                // Ako je kategorija odabrana, dodaj opcije iz mape
+                useTypeData[category].forEach(type => {
+                    const option = document.createElement('option');
+                    option.value = type;
+                    option.textContent = type;
+                    typeSelect.appendChild(option);
+                });
+                typeSelect.disabled = false; // Otključaj
+            } else {
+                typeSelect.innerHTML = '<option value="" disabled selected>Select category first</option>';
+                typeSelect.disabled = true; // Zaključaj
+            }
+        }
+
+        function addDiverseUseRow() {
+            const tbody = document.getElementById('diverse-uses-tbody');
+            const newRow = document.createElement('tr');
+            newRow.className = 'border-b border-gray-200';
+            newRow.innerHTML = `
+                <td class="p-0 border-r border-gray-200"><input type="text" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
+                <td class="p-0 border-r border-gray-200"><input type="text" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
+                <td class="p-0 border-r border-gray-200">
+                    <select onchange="updateUseTypes(this)" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-[13px] cursor-pointer" style="appearance: auto;">
+                        <option value="" disabled selected>Select category</option>
+                        <option value="Food retail">Food retail</option>
+                        <option value="Community-serving retail">Community-serving retail</option>
+                        <option value="Services">Services</option>
+                        <option value="Civic and community facilities">Civic and community facilities</option>
+                        <option value="Community anchor uses (BD+C and ID+C only)">Community anchor uses (BD+C and ID+C only)</option>
+                    </select>
+                </td>
+                <td class="p-0 border-r border-gray-200">
+                    <select class="use-type-select w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-[13px] cursor-pointer" disabled style="appearance: auto;">
+                        <option value="" disabled selected>Select category first</option>
+                    </select>
+                </td>
+                <td class="p-0 border-r border-gray-200"><input type="number" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
+                <td class="p-3 flex justify-center space-x-3 text-[#008c95] font-bold text-xl align-middle">
+                    <button type="button" onclick="addDiverseUseRow()" class="hover:text-teal-800 focus:outline-none select-none">+</button>
+                    <button type="button" onclick="removeDiverseUseRow(this)" class="hover:text-teal-800 focus:outline-none select-none">-</button>
+                </td>
+            `;
+            tbody.appendChild(newRow);
+        }
+
+        function removeDiverseUseRow(button) {
+            const tbody = document.getElementById('diverse-uses-tbody');
+            if (tbody.children.length > 1) {
+                // Briše redak ako postoji više od jednog
+                button.closest('tr').remove();
+            } else {
+                // Ako je zadnji redak, prazni inpute i resetira dropdown izbornike
+                const row = button.closest('tr');
+                const inputs = row.querySelectorAll('input');
+                inputs.forEach(input => input.value = '');
+                
+                const selects = row.querySelectorAll('select');
+                selects.forEach(select => select.selectedIndex = 0);
+                
+                const typeSelect = row.querySelector('.use-type-select');
+                typeSelect.innerHTML = '<option value="" disabled selected>Select category first</option>';
+                typeSelect.disabled = true;
+            }
+        }
+
+        function toggleDensityTable() {
+            const radioSeparate = document.getElementById('radio-separate');
+            const radioCombined = document.getElementById('radio-combined');
+            const separateContent = document.getElementById('separate-density-content');
+            const combinedContent = document.getElementById('combined-density-content');
+            
+            if (radioSeparate && radioSeparate.checked) {
+                if (separateContent) separateContent.classList.remove('hidden');
+                if (combinedContent) combinedContent.classList.add('hidden');
+            } else if (radioCombined && radioCombined.checked) {
+                if (separateContent) separateContent.classList.add('hidden');
+                if (combinedContent) combinedContent.classList.remove('hidden');
+            }
+        }
+        
+        document.addEventListener("DOMContentLoaded", toggleDensityTable);
+    </script>
 </body>
 </html>
