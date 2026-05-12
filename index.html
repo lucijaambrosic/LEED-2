@@ -245,8 +245,8 @@
                             </thead>
                             <tbody id="diverse-uses-tbody">
                                 <tr class="border-b border-gray-200">
-                                    <td class="p-0 border-r border-gray-200"><input type="text" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
-                                    <td class="p-0 border-r border-gray-200"><input type="text" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
+                                    <td class="p-0 border-r border-gray-200"><input type="text" placeholder="e.g. 1" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
+                                    <td class="p-0 border-r border-gray-200"><input type="text" placeholder="e.g. Bakery" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
                                     <td class="p-0 border-r border-gray-200">
                                         <!-- Dodan 'appearance: auto;' kako bi strelica dropdowna bila vidljiva -->
                                         <select onchange="updateUseTypes(this)" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-[13px] cursor-pointer" style="appearance: auto;">
@@ -391,8 +391,8 @@
             const newRow = document.createElement('tr');
             newRow.className = 'border-b border-gray-200';
             newRow.innerHTML = `
-                <td class="p-0 border-r border-gray-200"><input type="text" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
-                <td class="p-0 border-r border-gray-200"><input type="text" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
+                <td class="p-0 border-r border-gray-200"><input type="text" placeholder="e.g. 1" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
+                <td class="p-0 border-r border-gray-200"><input type="text" placeholder="e.g. Bakery" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
                 <td class="p-0 border-r border-gray-200">
                     <select onchange="updateUseTypes(this)" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-[13px] cursor-pointer" style="appearance: auto;">
                         <option value="" disabled selected>Select category</option>
