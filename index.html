@@ -17,13 +17,13 @@
             Surrounding Density and Diverse Uses
         </h1>
 
-        <!-- Odjeljak za odabir (prema screenshotu) -->
+        <!-- Odjeljak za odabir -->
         <div class="mb-6">
             <h2 class="text-xl font-bold text-black mb-4">
                 Select one or more of the following:
             </h2>
 
-            <!-- Okvir oko checkboxova, slično kao na slici -->
+            <!-- Okvir oko checkboxova -->
             <div class="border-t border-l border-gray-200 p-6 pt-5">
                 
                 <!-- Prva opcija -->
@@ -82,7 +82,7 @@
                                             Residential uses
                                         </td>
                                         <td class="p-0 bg-white w-[30%]">
-                                            <input type="number" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
+                                            <input type="number" id="mixed-use-res" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
                                         </td>
                                     </tr>
                                     <tr class="border-b border-gray-200">
@@ -90,7 +90,7 @@
                                             Nonresidential uses
                                         </td>
                                         <td class="p-0 bg-white">
-                                            <input type="number" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
+                                            <input type="number" id="mixed-use-nonres" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
                                         </td>
                                     </tr>
                                     <tr class="border-b border-gray-200">
@@ -106,7 +106,7 @@
                                             Total mixed-use building land area (hectares)
                                         </td>
                                         <td class="p-0 bg-white">
-                                            <input type="number" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
+                                            <input type="number" id="mixed-land-area" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
                                         </td>
                                     </tr>
                                     <tr>
@@ -114,7 +114,7 @@
                                             Residential dwelling units in mixed-use buildings
                                         </td>
                                         <td class="p-0 bg-white">
-                                            <input type="number" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
+                                            <input type="number" id="mixed-res-units" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
                                         </td>
                                     </tr>
                                 </tbody>
@@ -132,13 +132,13 @@
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-800 text-[14px] w-2/3 pr-4">Number of dwelling units in residential-only buildings</span>
                                     <div class="w-1/3">
-                                        <input type="number" class="w-full border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                                        <input type="number" id="res-only-units" class="w-full border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
                                     </div>
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-800 text-[14px] w-2/3 pr-4">Land area of residential-only buildings (hectares)</span>
                                     <div class="w-1/3">
-                                        <input type="number" class="w-full border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                                        <input type="number" id="res-only-land" class="w-full border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
                                     </div>
                                 </div>
                             </div>
@@ -156,13 +156,13 @@
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-800 text-[14px] w-2/3 pr-4">Nonresidential-only building area (sq m)</span>
                                     <div class="w-1/3">
-                                        <input type="number" class="w-full border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                                        <input type="number" id="nonres-only-area" class="w-full border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
                                     </div>
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-800 text-[14px] w-2/3 pr-4">Nonresidential-only land area (hectares)</span>
                                     <div class="w-1/3">
-                                        <input type="number" class="w-full border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                                        <input type="number" id="nonres-only-land" class="w-full border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
                                     </div>
                                 </div>
                             </div>
@@ -191,7 +191,7 @@
                                             Total building area (sq m)
                                         </td>
                                         <td class="p-0 bg-white w-[40%]">
-                                            <input type="number" class="w-full p-4 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
+                                            <input type="number" id="combined-bldg-area" class="w-full p-4 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
                                         </td>
                                     </tr>
                                     <tr class="border-b border-gray-200">
@@ -199,7 +199,7 @@
                                             Total buildable land (hectares)
                                         </td>
                                         <td class="p-0 bg-white">
-                                            <input type="number" class="w-full p-4 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
+                                            <input type="number" id="combined-land-area" class="w-full p-4 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
                                         </td>
                                     </tr>
                                     <tr>
@@ -207,7 +207,7 @@
                                             Sq m per hectare of buildable land
                                         </td>
                                         <td class="p-0 bg-white">
-                                            <input type="number" class="w-full p-4 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
+                                            <input type="number" id="combined-sqm-per-ha" class="w-full p-4 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800">
                                         </td>
                                     </tr>
                                 </tbody>
@@ -244,32 +244,7 @@
                                 </tr>
                             </thead>
                             <tbody id="diverse-uses-tbody">
-                                <tr class="border-b border-gray-200">
-                                    <td class="p-0 border-r border-gray-200"><input type="text" placeholder="e.g. 1" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
-                                    <td class="p-0 border-r border-gray-200"><input type="text" placeholder="e.g. Bakery" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
-                                    <td class="p-0 border-r border-gray-200">
-                                        <!-- Dodan 'appearance: auto;' kako bi strelica dropdowna bila vidljiva -->
-                                        <select onchange="updateUseTypes(this)" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-[13px] cursor-pointer" style="appearance: auto;">
-                                            <option value="" disabled selected>Select category</option>
-                                            <option value="Food retail">Food retail</option>
-                                            <option value="Community-serving retail">Community-serving retail</option>
-                                            <option value="Services">Services</option>
-                                            <option value="Civic and community facilities">Civic and community facilities</option>
-                                            <option value="Community anchor uses (BD+C and ID+C only)">Community anchor uses (BD+C and ID+C only)</option>
-                                        </select>
-                                    </td>
-                                    <td class="p-0 border-r border-gray-200">
-                                        <!-- Dodan 'appearance: auto;' kako bi strelica dropdowna bila vidljiva -->
-                                        <select class="use-type-select w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-[13px] cursor-pointer" disabled style="appearance: auto;">
-                                            <option value="" disabled selected>Select category first</option>
-                                        </select>
-                                    </td>
-                                    <td class="p-0 border-r border-gray-200"><input type="number" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
-                                    <td class="p-3 flex justify-center space-x-3 text-[#008c95] font-bold text-xl align-middle">
-                                        <button type="button" onclick="addDiverseUseRow()" class="hover:text-teal-800 focus:outline-none select-none">+</button>
-                                        <button type="button" onclick="removeDiverseUseRow(this)" class="hover:text-teal-800 focus:outline-none select-none">-</button>
-                                    </td>
-                                </tr>
+                                <!-- Redci se generiraju putem JavaScripta -->
                             </tbody>
                         </table>
                     </div>
@@ -290,104 +265,131 @@
             </div>
         </div>
 
-        <!-- Ovdje se kasnije mogu dodati dodatni detalji i funkcionalnosti -->
-        <div id="dodatni-detalji" class="mt-8 text-gray-500 text-sm italic">
-            <!-- Prostor rezerviran za vaše naknadne detalje -->
+        <!-- Kontrole za spremanje i učitavanje -->
+        <div class="mt-8 pt-6 border-t border-gray-200 flex flex-col items-center gap-6">
+            <div class="flex flex-wrap justify-center items-start gap-4 w-full">
+                <!-- Save Button -->
+                <div class="flex flex-col">
+                    <button id="save-btn" onclick="saveData()" class="bg-[#008c95] text-white font-bold py-3 px-8 rounded hover:bg-teal-700 transition-colors cursor-pointer">
+                        Save
+                    </button>
+                </div>
+                
+                <!-- Load Button Section -->
+                <div class="flex flex-col items-center">
+                    <button id="load-btn" onclick="triggerLoadFile()" class="bg-gray-600 text-white font-bold py-3 px-8 rounded hover:bg-gray-700 transition-colors cursor-pointer">
+                        Load
+                    </button>
+                    <span class="text-[11px] text-gray-500 mt-1 font-medium">For auditor (Bricmore)</span>
+                </div>
+            </div>
+
+            <!-- Upute za korisnike -->
+            <div class="max-w-md text-center text-gray-600 text-[14px] leading-relaxed">
+                After you fill in the form, click 'Save'. A file named 'values.json' will be downloaded to your computer and the Dropbox page will open. Please upload the downloaded file to Dropbox.
+            </div>
+
+            <!-- Skriveni file input -->
+            <input type="file" id="load-file-input" accept=".json" class="hidden" onchange="handleFileUpload(event)">
+
+            <span id="save-msg" class="font-bold hidden flex items-center">
+                <!-- Poruke se dinamično injektiraju -->
+            </span>
         </div>
+
+        <!-- Prostor rezerviran za naknadne detalje -->
+        <div id="dodatni-detalji" class="mt-8 text-gray-500 text-sm italic"></div>
 
     </div>
 
-    <!-- JavaScript za prikazivanje i skrivanje sadržaja -->
-    <script>
-        function toggleOption1() {
+    <!-- JavaScript -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInWithCustomToken, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Firebase inicijalizacija
+        let db;
+        let auth;
+        let currentUser = null;
+        let appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        let isFirebaseAvailable = typeof __firebase_config !== 'undefined';
+
+        if (isFirebaseAvailable) {
+            const firebaseConfig = JSON.parse(__firebase_config);
+            const app = initializeApp(firebaseConfig);
+            auth = getAuth(app);
+            db = getFirestore(app);
+
+            const initAuth = async () => {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+            };
+            
+            initAuth();
+            onAuthStateChanged(auth, async (user) => {
+                if (user) {
+                    currentUser = user;
+                    await loadDataFromCloud(); 
+                }
+            });
+        }
+
+        // --- Logika sučelja ---
+        
+        window.toggleOption1 = function() {
             const checkbox = document.getElementById('option1');
             const content = document.getElementById('option1-content');
-            if (checkbox.checked) {
-                content.classList.remove('hidden');
-                toggleDensityTable();
-            } else {
-                content.classList.add('hidden');
+            if (checkbox && content) {
+                checkbox.checked ? content.classList.remove('hidden') : content.classList.add('hidden');
+                window.toggleDensityTable();
             }
-        }
-
-        function toggleOption2() {
-            const checkbox = document.getElementById('option2');
-            const content = document.getElementById('option2-content');
-            if (checkbox.checked) {
-                content.classList.remove('hidden');
-            } else {
-                content.classList.add('hidden');
-            }
-        }
-
-        // Podaci preuzeti sa slike tablice ovisnosti
-        const useTypeData = {
-            "Food retail": [
-                "Supermarket",
-                "Grocery with produce section"
-            ],
-            "Community-serving retail": [
-                "Convenience store",
-                "Farmers market",
-                "Hardware store",
-                "Pharmacy",
-                "Other retail"
-            ],
-            "Services": [
-                "Bank",
-                "Family entertainment venue (e.g., theater, sports)",
-                "Gym, health club, exercise studio",
-                "Hair care",
-                "Laundry, dry cleaner",
-                "Restaurant, café, diner (excluding those with only drive-thru service)"
-            ],
-            "Civic and community facilities": [
-                "Adult or senior care (licensed)",
-                "Child care (licensed)",
-                "Community or recreation center",
-                "Cultural arts facility (museum, performing arts)",
-                "Education facility (e.g., K—12 school, university, adult education center, vocational school, community college)",
-                "Government office that serves public on-site",
-                "Medical clinic or office that treats patients",
-                "Place of worship",
-                "Police or fire station",
-                "Post office",
-                "Public library",
-                "Public park",
-                "Social services center"
-            ],
-            "Community anchor uses (BD+C and ID+C only)": [
-                "Commercial office (100 or more full-time equivalent jobs)",
-                "Housing (100 or more dwelling units)"
-            ]
         };
 
-        // Funkcija koja ažurira izbornik "Use Type"
-        function updateUseTypes(categorySelect) {
+        window.toggleOption2 = function() {
+            const checkbox = document.getElementById('option2');
+            const content = document.getElementById('option2-content');
+            if (checkbox && content) {
+                checkbox.checked ? content.classList.remove('hidden') : content.classList.add('hidden');
+            }
+        };
+
+        const useTypeData = {
+            "Food retail": ["Supermarket", "Grocery with produce section"],
+            "Community-serving retail": ["Convenience store", "Farmers market", "Hardware store", "Pharmacy", "Other retail"],
+            "Services": ["Bank", "Family entertainment venue (e.g., theater, sports)", "Gym, health club, exercise studio", "Hair care", "Laundry, dry cleaner", "Restaurant, café, diner (excluding those with only drive-thru service)"],
+            "Civic and community facilities": ["Adult or senior care (licensed)", "Child care (licensed)", "Community or recreation center", "Cultural arts facility (museum, performing arts)", "Education facility (e.g., K—12 school, university, adult education center, vocational school, community college)", "Government office that serves public on-site", "Medical clinic or office that treats patients", "Place of worship", "Police or fire station", "Post office", "Public library", "Public park", "Social services center"],
+            "Community anchor uses (BD+C and ID+C only)": ["Commercial office (100 or more full-time equivalent jobs)", "Housing (100 or more dwelling units)"]
+        };
+
+        window.updateUseTypes = function(categorySelect) {
             const category = categorySelect.value;
             const row = categorySelect.closest('tr');
             const typeSelect = row.querySelector('.use-type-select');
+            if (!typeSelect) return;
 
-            // Očisti trenutne opcije
             typeSelect.innerHTML = '<option value="" disabled selected>Select use type</option>';
 
             if (category && useTypeData[category]) {
-                // Ako je kategorija odabrana, dodaj opcije iz mape
                 useTypeData[category].forEach(type => {
                     const option = document.createElement('option');
                     option.value = type;
                     option.textContent = type;
                     typeSelect.appendChild(option);
                 });
-                typeSelect.disabled = false; // Otključaj
+                typeSelect.disabled = false;
             } else {
                 typeSelect.innerHTML = '<option value="" disabled selected>Select category first</option>';
-                typeSelect.disabled = true; // Zaključaj
+                typeSelect.disabled = true;
             }
-        }
+        };
 
-        function addDiverseUseRow() {
+        window.addDiverseUseRow = function(initialData = null) {
             const tbody = document.getElementById('diverse-uses-tbody');
+            if (!tbody) return;
             const newRow = document.createElement('tr');
             newRow.className = 'border-b border-gray-200';
             newRow.innerHTML = `
@@ -415,44 +417,195 @@
                 </td>
             `;
             tbody.appendChild(newRow);
-        }
 
-        function removeDiverseUseRow(button) {
+            if (initialData && !(initialData instanceof Event)) {
+                const inputs = newRow.querySelectorAll('input');
+                const selects = newRow.querySelectorAll('select');
+                inputs[0].value = initialData.label || '';
+                inputs[1].value = initialData.name || '';
+                inputs[2].value = initialData.distance || '';
+                if (initialData.category) {
+                    selects[0].value = initialData.category;
+                    window.updateUseTypes(selects[0]);
+                    if (initialData.type) selects[1].value = initialData.type;
+                }
+            }
+        };
+
+        window.removeDiverseUseRow = function(button) {
             const tbody = document.getElementById('diverse-uses-tbody');
             if (tbody.children.length > 1) {
-                // Briše redak ako postoji više od jednog
                 button.closest('tr').remove();
             } else {
-                // Ako je zadnji redak, prazni inpute i resetira dropdown izbornike
                 const row = button.closest('tr');
                 const inputs = row.querySelectorAll('input');
                 inputs.forEach(input => input.value = '');
-                
                 const selects = row.querySelectorAll('select');
                 selects.forEach(select => select.selectedIndex = 0);
-                
                 const typeSelect = row.querySelector('.use-type-select');
                 typeSelect.innerHTML = '<option value="" disabled selected>Select category first</option>';
                 typeSelect.disabled = true;
             }
-        }
+        };
 
-        function toggleDensityTable() {
+        window.toggleDensityTable = function() {
             const radioSeparate = document.getElementById('radio-separate');
-            const radioCombined = document.getElementById('radio-combined');
             const separateContent = document.getElementById('separate-density-content');
             const combinedContent = document.getElementById('combined-density-content');
+            if (!separateContent || !combinedContent) return;
             
             if (radioSeparate && radioSeparate.checked) {
-                if (separateContent) separateContent.classList.remove('hidden');
-                if (combinedContent) combinedContent.classList.add('hidden');
-            } else if (radioCombined && radioCombined.checked) {
-                if (separateContent) separateContent.classList.add('hidden');
-                if (combinedContent) combinedContent.classList.remove('hidden');
+                separateContent.classList.remove('hidden');
+                combinedContent.classList.add('hidden');
+            } else {
+                separateContent.classList.add('hidden');
+                combinedContent.classList.remove('hidden');
+            }
+        };
+
+        // --- Funkcija za popunjavanje sučelja podacima (Shared Logic) ---
+        window.populateUIFromData = function(data) {
+            if (!data) return;
+
+            document.getElementById('option1').checked = !!data.option1;
+            document.getElementById('option2').checked = !!data.option2;
+
+            if (data.densityOption === 'combined') {
+                document.getElementById('radio-combined').checked = true;
+            } else {
+                document.getElementById('radio-separate').checked = true;
+            }
+
+            const setVal = (id, val) => { const el = document.getElementById(id); if(el) el.value = val || ''; };
+            setVal('mixed-use-res', data.mixedUseRes);
+            setVal('mixed-use-nonres', data.mixedUseNonres);
+            setVal('mixed-land-area', data.mixedLandArea);
+            setVal('mixed-res-units', data.mixedResUnits);
+            setVal('res-only-units', data.resOnlyUnits);
+            setVal('res-only-land', data.resOnlyLand);
+            setVal('nonres-only-area', data.nonresOnlyArea);
+            setVal('nonres-only-land', data.nonresOnlyLand);
+            setVal('combined-bldg-area', data.combinedBldgArea);
+            setVal('combined-land-area', data.combinedLandArea);
+            setVal('combined-sqm-per-ha', data.combinedSqmPerHa);
+
+            const tbody = document.getElementById('diverse-uses-tbody');
+            if (tbody) {
+                tbody.innerHTML = '';
+                if (data.diverseUses && data.diverseUses.length > 0) {
+                    data.diverseUses.forEach(use => window.addDiverseUseRow(use));
+                } else {
+                    window.addDiverseUseRow();
+                }
+            }
+
+            window.toggleOption1();
+            window.toggleOption2();
+        };
+
+        // --- Save / Load Logic ---
+
+        window.saveData = async function() {
+            const btn = document.getElementById('save-btn');
+            const msg = document.getElementById('save-msg');
+            btn.disabled = true;
+
+            const data = {
+                option1: document.getElementById('option1').checked,
+                option2: document.getElementById('option2').checked,
+                densityOption: document.getElementById('radio-separate').checked ? 'separate' : 'combined',
+                mixedUseRes: document.getElementById('mixed-use-res')?.value,
+                mixedUseNonres: document.getElementById('mixed-use-nonres')?.value,
+                mixedLandArea: document.getElementById('mixed-land-area')?.value,
+                mixedResUnits: document.getElementById('mixed-res-units')?.value,
+                resOnlyUnits: document.getElementById('res-only-units')?.value,
+                resOnlyLand: document.getElementById('res-only-land')?.value,
+                nonresOnlyArea: document.getElementById('nonres-only-area')?.value,
+                nonresOnlyLand: document.getElementById('nonres-only-land')?.value,
+                combinedBldgArea: document.getElementById('combined-bldg-area')?.value,
+                combinedLandArea: document.getElementById('combined-land-area')?.value,
+                combinedSqmPerHa: document.getElementById('combined-sqm-per-ha')?.value,
+                diverseUses: []
+            };
+
+            document.querySelectorAll('#diverse-uses-tbody tr').forEach(row => {
+                const inputs = row.querySelectorAll('input');
+                const selects = row.querySelectorAll('select');
+                if(inputs.length >= 3 && selects.length >= 2) {
+                    data.diverseUses.push({
+                        label: inputs[0].value,
+                        name: inputs[1].value,
+                        category: selects[0].value,
+                        type: selects[1].value,
+                        distance: inputs[2].value
+                    });
+                }
+            });
+
+            // Lokalni download
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "values.json"; // Promijenjeno iz vrijednosti.json u values.json
+            a.click();
+            URL.revokeObjectURL(url);
+
+            // Cloud spremanje
+            if (isFirebaseAvailable && currentUser) {
+                await setDoc(doc(db, 'artifacts', appId, 'users', currentUser.uid, 'formData', 'main'), data);
+            }
+
+            // Dropbox otvaranje
+            window.open("https://www.dropbox.com/scl/fo/1zot08b3vq5j4klbm4t74/ACCW7duarFj6vOVyEnOD-GA?rlkey=t6aux1rb4z7zg2bu2pa8oq11a&st=53l0fegn&dl=0", "_blank");
+
+            msg.innerHTML = 'Podaci spremljeni! Molimo učitajte JSON u Dropbox.';
+            msg.className = "mt-3 font-bold text-green-600 flex items-center text-sm justify-center w-full";
+            msg.classList.remove('hidden');
+            setTimeout(() => { msg.classList.add('hidden'); }, 6000);
+            btn.disabled = false;
+        };
+
+        window.triggerLoadFile = function() {
+            document.getElementById('load-file-input').click();
+        };
+
+        window.handleFileUpload = function(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    window.populateUIFromData(data);
+                    const msg = document.getElementById('save-msg');
+                    msg.innerHTML = 'Podaci učitani iz datoteke!';
+                    msg.className = "mt-3 font-bold text-blue-600 flex items-center text-sm justify-center w-full";
+                    msg.classList.remove('hidden');
+                    setTimeout(() => { msg.classList.add('hidden'); }, 3000);
+                } catch (err) {
+                    alert("Greška pri čitanju datoteke! Provjerite format.");
+                }
+            };
+            reader.readAsText(file);
+        };
+
+        async function loadDataFromCloud() {
+            if (!isFirebaseAvailable || !currentUser) return;
+            try {
+                const docSnap = await getDoc(doc(db, 'artifacts', appId, 'users', currentUser.uid, 'formData', 'main'));
+                if (docSnap.exists()) window.populateUIFromData(docSnap.data());
+                else window.addDiverseUseRow();
+            } catch (e) {
+                console.error(e);
+                window.addDiverseUseRow();
             }
         }
-        
-        document.addEventListener("DOMContentLoaded", toggleDensityTable);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if (!document.getElementById('diverse-uses-tbody').hasChildNodes()) window.addDiverseUseRow();
+            window.toggleDensityTable();
+        });
     </script>
 </body>
 </html>
