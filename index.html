@@ -266,8 +266,8 @@
         </div>
 
         <!-- Kontrole za spremanje i učitavanje -->
-        <div class="mt-8 pt-6 border-t border-gray-200 flex flex-col items-center gap-6">
-            <div class="flex flex-wrap justify-center items-start gap-4 w-full">
+        <div class="mt-8 pt-6 border-t border-gray-200 flex flex-col items-center gap-4">
+            <div class="flex flex-wrap items-start justify-center gap-4">
                 <!-- Save Button -->
                 <div class="flex flex-col">
                     <button id="save-btn" onclick="saveData()" class="bg-[#008c95] text-white font-bold py-3 px-8 rounded hover:bg-teal-700 transition-colors cursor-pointer">
@@ -282,19 +282,19 @@
                     </button>
                     <span class="text-[11px] text-gray-500 mt-1 font-medium">For auditor (Bricmore)</span>
                 </div>
+
+                <!-- Skriveni file input -->
+                <input type="file" id="load-file-input" accept=".json" class="hidden" onchange="handleFileUpload(event)">
             </div>
 
-            <!-- Upute za korisnike -->
-            <div class="max-w-md text-center text-gray-600 text-[14px] leading-relaxed">
-                After you fill in the form, click 'Save'. A file named 'values.json' will be downloaded to your computer and the Dropbox page will open. Please upload the downloaded file to Dropbox.
-            </div>
-
-            <!-- Skriveni file input -->
-            <input type="file" id="load-file-input" accept=".json" class="hidden" onchange="handleFileUpload(event)">
-
-            <span id="save-msg" class="font-bold hidden flex items-center">
+            <span id="save-msg" class="font-bold hidden text-center text-sm">
                 <!-- Poruke se dinamično injektiraju -->
             </span>
+
+            <!-- Dodani tekst ispod gumbova -->
+            <p class="mt-2 text-[15px] text-gray-700 text-center max-w-lg leading-relaxed">
+                After you fill in the form, click 'Save'. A file named 'values.json' will be downloaded to your computer and the Dropbox page will open. Please upload the downloaded file to Dropbox.
+            </p>
         </div>
 
         <!-- Prostor rezerviran za naknadne detalje -->
@@ -392,11 +392,12 @@
             if (!tbody) return;
             const newRow = document.createElement('tr');
             newRow.className = 'border-b border-gray-200';
+            // Added appearance-auto and pr-8 to tailwind classes so the arrow renders properly without cutting off text
             newRow.innerHTML = `
                 <td class="p-0 border-r border-gray-200"><input type="text" placeholder="e.g. 1" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
                 <td class="p-0 border-r border-gray-200"><input type="text" placeholder="e.g. Bakery" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-center"></td>
                 <td class="p-0 border-r border-gray-200">
-                    <select onchange="updateUseTypes(this)" class="w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-[13px] cursor-pointer" style="appearance: auto;">
+                    <select onchange="updateUseTypes(this)" class="w-full p-3 pr-8 appearance-auto focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-[13px] cursor-pointer">
                         <option value="" disabled selected>Select category</option>
                         <option value="Food retail">Food retail</option>
                         <option value="Community-serving retail">Community-serving retail</option>
@@ -406,7 +407,7 @@
                     </select>
                 </td>
                 <td class="p-0 border-r border-gray-200">
-                    <select class="use-type-select w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-[13px] cursor-pointer" disabled style="appearance: auto;">
+                    <select class="use-type-select w-full p-3 pr-8 appearance-auto focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-gray-800 text-[13px] cursor-pointer" disabled>
                         <option value="" disabled selected>Select category first</option>
                     </select>
                 </td>
@@ -547,7 +548,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = "vrijednosti.json";
+            a.download = "values.json";
             a.click();
             URL.revokeObjectURL(url);
 
@@ -560,7 +561,7 @@
             window.open("https://www.dropbox.com/scl/fo/1zot08b3vq5j4klbm4t74/ACCW7duarFj6vOVyEnOD-GA?rlkey=t6aux1rb4z7zg2bu2pa8oq11a&st=53l0fegn&dl=0", "_blank");
 
             msg.innerHTML = 'Podaci spremljeni! Molimo učitajte JSON u Dropbox.';
-            msg.className = "mt-3 font-bold text-green-600 flex items-center text-sm justify-center w-full";
+            msg.className = "ml-2 mt-3 font-bold text-green-600 flex items-center text-sm";
             msg.classList.remove('hidden');
             setTimeout(() => { msg.classList.add('hidden'); }, 6000);
             btn.disabled = false;
@@ -580,7 +581,7 @@
                     window.populateUIFromData(data);
                     const msg = document.getElementById('save-msg');
                     msg.innerHTML = 'Podaci učitani iz datoteke!';
-                    msg.className = "mt-3 font-bold text-blue-600 flex items-center text-sm justify-center w-full";
+                    msg.className = "ml-2 mt-3 font-bold text-blue-600 flex items-center text-sm";
                     msg.classList.remove('hidden');
                     setTimeout(() => { msg.classList.add('hidden'); }, 3000);
                 } catch (err) {
@@ -602,8 +603,9 @@
             }
         }
 
+        // KLJUČNI ISPRAVAK OVDJE: Umjesto hasChildNodes() koristimo children.length === 0
         document.addEventListener("DOMContentLoaded", () => {
-            if (!document.getElementById('diverse-uses-tbody').hasChildNodes()) window.addDiverseUseRow();
+            if (document.getElementById('diverse-uses-tbody').children.length === 0) window.addDiverseUseRow();
             window.toggleDensityTable();
         });
     </script>
